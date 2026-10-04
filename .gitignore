@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Astro
+.astro/
+dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local development
+.DS_Store
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
