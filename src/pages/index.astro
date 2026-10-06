@@ -1,71 +1,71 @@
 ---
 import "../styles/global.css";
 import { projects } from "../data/projects";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>Project Showcase</title>
-  </head>
+</head>
 
-  <body>
-    <nav class="nav">
-      <a href="/" class="logo">Project Showcase</a>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-      </div>
-    </nav>
-    <main class="page">
-      <header class="hero">
-        <p class="eyebrow">Selected work</p>
-        <h1>Project Showcase</h1>
+<body>
+<Nav />
+<main class="page">
+    <header class="hero">
+        <p class="eyebrow">Tanya Abramovskaia</p>
+        <h1>Selected Projects</h1>
         <p class="intro">
-          A collection of analytics, data, and visualization projects.
+            A collection of things I’ve built, explored, and found worth sharing.
         </p>
-      </header>
+    </header>
 
-      <section id="projects">
+    <section id="projects">
         <div class="filters">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="Python">Python</button>
-          <button class="filter" data-filter="Tableau">Tableau</button>
-          <button class="filter" data-filter="Statistics">Statistics</button>
-          <button class="filter" data-filter="Clustering">Clustering</button>
-        </div>
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>Projects</h2>
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="Python">Python</button>
+            <button class="filter" data-filter="Tableau">Tableau</button>
+            <button class="filter" data-filter="Statistics">Statistics</button>
+            <button class="filter" data-filter="Clustering">Clustering</button>
         </div>
         <div class="projects-grid">
-          {projects.map((project) => (
-            <a href={project.url} class="project-card">
-              <img src={project.image} alt={project.title} />
-
-              <div class="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-
-                <div class="tags">
-                  {project.tags.map((tag) => (
-                    <span>{tag}</span>
-                  ))}
+            {projects.map((project) => (
+            <a href={`/projects/${project.slug}`} class="project-card" data-tags={project.tags.join(",")}>
+                <div class="project-image">
+                    <img src={project.image} alt={project.title}/>
                 </div>
-              </div>
+
+                <div class="project-content">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+
+                    <div class="tags">
+                        {project.tags.map((tag) => (
+                        <span>{tag}</span>
+                        ))}
+                    </div>
+                </div>
             </a>
-          ))}
+            ))}
         </div>
-      </section>
-      <section id="about" class="about">
+    </section>
+    <section id="about" class="about">
         <p class="eyebrow">About</p>
         <h2>Data, analytics & visualization</h2>
         <p>
-          A selection of projects exploring data analysis, statistics,
-          visualization, and business insights.
+            A selection of projects exploring data analysis, statistics, visualization, and business insights.
+            A collection of analytics, data, and visualization projects.
+            A collection of things I’ve built, explored, and found worth sharing.
+            A collection of data analytics projects, experiments, and things worth exploring.
         </p>
-      </section>
-    </main>
-  </body>
+    </section>
+</main>
+<Footer />
+<script>
+    import "../scripts/project-filters-single";
+</script>
+</body>
 </html>
