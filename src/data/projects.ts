@@ -2,7 +2,7 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    slug: "sales-analysis",
+    slug: "sales_analysis",
     title: "Sales Analysis",
     description: "Exploratory analysis of sales data with Python.",
     image: "/images/projects/project-01.webp",
@@ -10,7 +10,7 @@ export const projects: Project[] = [
     url: "#",
   },
   {
-    slug: "customer-segmentation",
+    slug: "customer_segmentation",
     title: "Customer Segmentation",
     description: "Customer clustering and segment analysis.",
     image: "/images/projects/project-02.webp",
@@ -18,11 +18,11 @@ export const projects: Project[] = [
     url: "#",
   },
   {
-    slug: "business-dashboard",
-    title: "Business Dashboard",
-    description: "Interactive dashboard for business performance analysis.",
+    slug: "multi-channel",
+    title: "One does not simply mark all messages as read",
+    description: "One does not simply mark all messages as read.",
     image: "/images/projects/project-03.webp",
     tags: ["Tableau", "Dashboard", "Analytics"],
-    url: "#",
+    url: "https://github.com/TAbramovskaya/sml-multi-channel-communication/",
   },
 ];

@@ -1,0 +1,85 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404</title>
+  </head>
+
+  <body>
+    <Nav />
+
+    <main class="error-page">
+  <div class="error-content">
+    <h1>Error 404</h1>
+
+    <p class="error-description">
+      I can’t find this project right now. It may have been renamed, moved, or temporarily unavailable. Or perhaps it’s still waiting to be created.
+    </p>
+
+    <a href="/" class="error-button">Go back to home</a>
+  </div>
+</main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing) * 16) calc(var(--spacing) * 6);
+}
+
+.error-content {
+  max-width: var(--container-xl);
+  text-align: center;
+}
+
+.error-content h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  line-height: var(--text-5xl--line-height);
+  font-weight: var(--font-weight-thin);
+  color: var(--color-base-900);
+}
+
+.error-description {
+  margin: calc(var(--spacing) * 6) 0 0;
+  color: var(--color-base-600);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+}
+
+.error-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--spacing) * 8);
+  margin-top: calc(var(--spacing) * 8);
+  padding-inline: calc(var(--spacing) * 4);
+  border-radius: var(--radius-lg);
+  background: var(--color-base-900);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  line-height: var(--text-xs--line-height);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition-property: color, background-color;
+  transition-duration: .5s;
+  transition-timing-function: var(--ease-in-out);
+}
+
+.error-button:hover {
+  background: var(--color-accent-500);
+}
+</style>

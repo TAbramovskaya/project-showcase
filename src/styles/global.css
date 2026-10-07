@@ -188,6 +188,10 @@ body {
   height: var(--text-xl);
 }
 
+.github-link:hover {
+  color: var(--color-accent-500);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -494,9 +498,14 @@ body {
 }
 
 .project-markdown a {
+  color: var(--color-base-900);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.project-markdown a:hover {
   color: var(--color-accent-500);
-  font-weight: var(--font-weight-light);
-  text-decoration: underline;
 }
 
 .project-markdown strong {
@@ -512,6 +521,50 @@ body {
   color: var(--color-accent-500);
   font-style: italic;
   font-weight: var(--font-weight-light);
+}
+
+.project-markdown table {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+}
+
+.project-markdown th,
+.project-markdown td {
+  padding: calc(var(--spacing) * 3);
+  border-bottom: 1px solid var(--color-base-100);
+  text-align: left;
+  vertical-align: top;
+}
+
+.project-markdown th {
+  color: var(--color-base-900);
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-base-50);
+}
+
+.project-markdown td {
+  color: var(--color-base-600);
+}
+
+.project-markdown img.img-white {
+  display: block;
+  width: var(--container-xl);
+  max-width: 80%;
+  height: auto;
+  margin: calc(var(--spacing) * 8) auto;
+  mix-blend-mode: multiply;
+}
+
+.project-markdown img.img-transparent {
+  display: block;
+  width: var(--container-xl);
+  max-width: 80%;
+  height: auto;
+  margin: calc(var(--spacing) * 8) auto;
 }
 
 @supports (font-variation-settings: normal) {
