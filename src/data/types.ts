@@ -5,4 +5,5 @@ export type Project = {
   image: string;
   tags: string[];
   url: string;
+  contentType: "markdown" | "notebook";
 };

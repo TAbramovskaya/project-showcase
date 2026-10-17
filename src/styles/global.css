@@ -6,6 +6,7 @@
   --font-display: "Hedvig Letters Serif", serif;
   --font-sans: "InterVariable", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-markdown: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-serif: Georgia, serif;
   --font-garamond: "Cormorant Garamond", serif;
   --font-editorial: "Playfair Display", serif;
@@ -13,12 +14,13 @@
   --font-modern-serif: "DM Serif Display", serif;
   --font-humanist: "Lora", serif;
   --font-sans-alt: "Manrope", sans-serif;
+
   --spacing: .25rem;
 
   --text-xs: .75rem;
   --text-xs--line-height: calc(1 / .75);
   --text-sm: .875rem;
-  --text-sm--line-height: calc(1.25 / .875);
+  --text-sm--line-height: calc(1.25 / .75);
   --text-base: 1rem;
   --text-base--line-height: calc(1.5 / 1);
   --text-lg: 1.125rem;
@@ -79,7 +81,7 @@
   --color-base-700: oklch(39.8% .005 91.46);
   --color-base-800: oklch(30.9% .004 84.54);
   --color-base-900: oklch(22.3% .002 67.71);
-  --color-base-950: oklch(17.7% .002 106.5)
+  --color-base-950: oklch(17.7% .002 106.5);
 
   --ease-in-out: cubic-bezier(.4, 0, .2, 1);
 }
@@ -92,6 +94,7 @@ html {
 
 body {
   margin: 0;
+  background: var(--color-white);
 }
 
 .page {
@@ -430,58 +433,57 @@ body {
 }
 
 .project-markdown {
-  max-width: 65ch;
+  max-width: var(--container-xl);
   margin-inline: auto;
-
-  font-family: var(--font-base);
-  font-size: var(--text-base);
-  line-height: 1.75;
-  color: var(--color-base-600);
+  font-family: var(--font-markdown);
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  color: var(--color-base-700);
 }
 
 .project-markdown h1,
 .project-markdown h2,
 .project-markdown h3,
 .project-markdown h4 {
-  color: var(--color-base-600);
+  color: var(--color-base-900);
 }
 
 .project-markdown h1 {
-  margin: 0 0 0.888889em;
-  font-family: var(--font-base);
-  font-size: 2.25em;
-  line-height: 1.11111;
+  margin: 0 0 calc(var(--spacing) * 4);
+  font-family: var(--font-markdown);
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
   font-weight: var(--font-weight-thin);
 }
 
 .project-markdown h2 {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  font-family: var(--font-base);
-  font-size: 1.5em;
-  line-height: 1.33333;
+  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 4);
+  font-family: var(--font-markdown);
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
   font-weight: var(--font-weight-light);
 }
 
 .project-markdown h3 {
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
-  font-family: var(--font-base);
-  font-size: 1.25em;
-  line-height: 1.6;
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 3);
+  font-family: var(--font-markdown);
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
   font-weight: var(--font-weight-light);
 }
 
 .project-markdown p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 0;
+  margin-bottom: var(--text-sm);
 }
 
 .project-markdown ul,
 .project-markdown ol {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  padding-inline-start: 1.625em;
+  margin-top: calc(var(--spacing) * 5);
+  margin-bottom: calc(var(--spacing) * 5);
+  padding-inline-start: calc(var(--spacing) * 6);
 }
 
 .project-markdown ul {
@@ -493,15 +495,15 @@ body {
 }
 
 .project-markdown li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 2);
 }
 
 .project-markdown a {
   color: var(--color-base-900);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 
 .project-markdown a:hover {
@@ -514,10 +516,10 @@ body {
 }
 
 .project-markdown blockquote {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
-  padding-inline-start: 1em;
-  border-inline-start: 0.25rem solid var(--color-accent-500);
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 6);
+  padding-inline-start: calc(var(--spacing) * 4);
+  border-inline-start: calc(var(--spacing) * 1) solid var(--color-accent-500);
   color: var(--color-accent-500);
   font-style: italic;
   font-weight: var(--font-weight-light);
@@ -525,8 +527,8 @@ body {
 
 .project-markdown table {
   width: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 8);
   border-collapse: collapse;
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
@@ -565,6 +567,22 @@ body {
   max-width: 80%;
   height: auto;
   margin: calc(var(--spacing) * 8) auto;
+}
+
+.project-notebook {
+  max-width: var(--container-2xl);
+  margin-inline: auto;
+  color: var(--color-base-600);
+  font-family: var(--font-markdown);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+}
+
+.project-notebook h1,
+.project-notebook h2,
+.project-notebook h3,
+.project-notebook h4 {
+  color: var(--color-base-900);
 }
 
 @supports (font-variation-settings: normal) {
