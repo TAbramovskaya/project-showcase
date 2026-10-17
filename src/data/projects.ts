@@ -8,14 +8,16 @@ export const projects: Project[] = [
     image: "/images/projects/project-01.webp",
     tags: ["Python", "Pandas", "Visualization"],
     url: "#",
+    contentType: "markdown",
   },
   {
-    slug: "customer_segmentation",
+    slug: "project-markdown",
     title: "Customer Segmentation",
-    description: "Customer clustering and segment analysis.",
+    description: "Test project with markdown and notebook.",
     image: "/images/projects/project-02.webp",
     tags: ["Python", "Clustering", "Statistics"],
     url: "#",
+    contentType: "notebook",
   },
   {
     slug: "multi-channel",
@@ -24,5 +26,6 @@ export const projects: Project[] = [
     image: "/images/projects/project-03.webp",
     tags: ["Tableau", "Dashboard", "Analytics"],
     url: "https://github.com/TAbramovskaya/sml-multi-channel-communication/",
+    contentType: "markdown",
   },
 ];
