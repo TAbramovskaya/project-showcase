@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { projects } from "../data/projects";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { filters } from "../data/filters";
 ---
 
 <html lang="en">
@@ -26,10 +27,11 @@ import Footer from "../components/Footer.astro";
     <section id="projects">
         <div class="filters">
             <button class="filter active" data-filter="all">All</button>
-            <button class="filter" data-filter="Python">Python</button>
-            <button class="filter" data-filter="Tableau">Tableau</button>
-            <button class="filter" data-filter="Statistics">Statistics</button>
-            <button class="filter" data-filter="Clustering">Clustering</button>
+            {filters.map((filter) => (
+                <button class="filter" data-filter={filter}>
+                    {filter}
+                </button>
+            ))}
         </div>
         <div class="projects-grid">
             {projects.map((project) => (
