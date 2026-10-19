@@ -2,12 +2,12 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    slug: "sales_analysis",
-    title: "Sales Analysis",
-    description: "Exploratory analysis of sales data with Python.",
+    slug: "dear_neighbour",
+    title: "Dear Neighbour",
+    description: "Exploring sales, products, customers, stores, and business performance.",
     image: "/images/projects/project-01.webp",
-    tags: ["Python", "Pandas", "Visualization"],
-    url: "#",
+    tags: ["Power BI", "Dashboard", "Python"],
+    url: "https://github.com/TAbramovskaya/dear-neighbour",
     contentType: "markdown",
   },
   {
