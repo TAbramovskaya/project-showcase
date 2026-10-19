@@ -432,6 +432,11 @@ body {
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.08);
 }
 
+.project-page-image + .project-markdown,
+.project-page-image + .project-notebook {
+  margin-top: calc(var(--spacing) * 8);
+}
+
 .project-markdown {
   max-width: var(--container-xl);
   margin-inline: auto;
@@ -439,6 +444,14 @@ body {
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
   color: var(--color-base-700);
+}
+
+.project-markdown :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-base-50);
+  padding-inline: calc(var(--spacing) * 1);
+  border-radius: calc(var(--spacing) * 1);
 }
 
 .project-markdown h1,
@@ -558,6 +571,7 @@ body {
   max-width: 80%;
   height: auto;
   margin: calc(var(--spacing) * 8) auto;
+  margin-block: calc(var(--spacing) * 6);
   mix-blend-mode: multiply;
 }
 
@@ -567,6 +581,16 @@ body {
   max-width: 80%;
   height: auto;
   margin: calc(var(--spacing) * 8) auto;
+  margin-block: calc(var(--spacing) * 6);
+}
+.project-markdown details + *:not(h1, h2, h3, h4, h5, h6) {
+  margin-top: calc(var(--spacing) * 2);
+}
+
+.project-markdown details[open] {
+  margin-block: calc(var(--spacing) * 4);
+  padding-inline-start: calc(var(--spacing) * 4);
+  border-inline-start: 2px solid var(--color-base-100);
 }
 
 .project-notebook {
