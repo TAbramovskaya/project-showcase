@@ -568,7 +568,7 @@ body {
 .project-markdown img.img-white {
   display: block;
   width: var(--container-xl);
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   margin: calc(var(--spacing) * 8) auto;
   margin-block: calc(var(--spacing) * 6);
