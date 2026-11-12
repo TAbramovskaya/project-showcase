@@ -28,4 +28,13 @@ export const projects: Project[] = [
     url: "https://github.com/TAbramovskaya/sml-multi-channel-communication/",
     contentType: "markdown",
   },
+  {
+    slug: "tour-tracker",
+    title: "Tour Tracker",
+    description: "A lazy concert hunting.",
+    image: "/images/projects/project_img_tour_tracker.jpg",
+    tags: ["Python", "SQLite", "Automation"],
+    url: "https://github.com/TAbramovskaya/tour-tracker",
+    contentType: "markdown",
+  },
 ];

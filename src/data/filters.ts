@@ -4,5 +4,7 @@ export const filters = [
   "Power BI",
   "Dashboard",
   "Statistics",
-  "SQL"
+  "SQL",
+  "SQLite",
+  "Automation"
 ];
